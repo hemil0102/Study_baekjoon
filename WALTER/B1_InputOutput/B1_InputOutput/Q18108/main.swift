@@ -1,10 +1,13 @@
 //
 //  main.swift
-//  B1_InputOutput
+//  Q18108
 //
 //  Created by Walter J on 2022/02/14.
 //
 
 import Foundation
 
-print("joonas??!")
+var buddhismYear = readLine()!
+print(Int(buddhismYear)!-543)
+
+

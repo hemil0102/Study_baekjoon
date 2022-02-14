@@ -7,4 +7,5 @@
 
 import Foundation
 
-print("joonas??!")
+var name = readLine()!
+print("\(name)??!")

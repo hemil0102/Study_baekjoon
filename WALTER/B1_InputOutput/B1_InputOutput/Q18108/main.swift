@@ -7,5 +7,7 @@
 
 import Foundation
 
-print("Hello, World!")
+var buddhismYear = readLine()!
+print(Int(buddhismYear)!-543)
+
 

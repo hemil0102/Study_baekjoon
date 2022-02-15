@@ -1,8 +1,8 @@
 //
 //  main.swift
-//  11~20
+//  03_for
 //
-//  Created by JONGMIN Youn on 2022/02/12.
+//  Created by JONGMIN Youn on 2022/02/15.
 //
 
 import Foundation

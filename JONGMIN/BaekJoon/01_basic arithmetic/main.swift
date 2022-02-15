@@ -87,3 +87,42 @@ let inputStr = "joonas"
 print(inputStr + "??!")
 
 
+//#11
+
+//let inputYr = Int(readLine()!)!
+let inputYr = 2541
+
+let cal = 2541 - 1998
+
+print("\(inputYr - cal)")
+
+//#12
+
+//let input = readLine()!
+let input12 = "5 8 4"
+
+let arr12 = input12.split(separator: " ").map{ Int($0)! }
+
+let a12 = arr12[0]
+let b12 = arr12[1]
+let c12 = arr12[2]
+
+print((a12+b12)%c12)
+print(((a12%c12) + (b12%c12))%c12 )
+print((a12*b12)%c12)
+print(((a12%c12) * (b12%c12))%c12 )
+
+//#13
+//var firstNum = Int(readLine()!)!
+//var secondNum = Int(readLine()!)!
+let firstNum = 472
+let secondNum = 385
+
+var A:Int = (firstNum*(secondNum%10))
+var B:Int = (firstNum*((secondNum%100)/10))
+var C:Int = (firstNum*(secondNum/100))
+var D:Int = (firstNum*secondNum)
+print(A)
+print(B)
+print(C)
+print(D)

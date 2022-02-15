@@ -109,7 +109,7 @@ for i in 1...input10 {
 //#11
 
 let input11 = readLine()!
-let inputArr11 = input.split(separator: " ").map{ Int($0)! }
+let inputArr11 = input11.split(separator: " ").map{ Int($0)! }
 
 let input112 = readLine()!
 let inputArr112 = input11.split(separator: " ").map{ Int($0)! }

@@ -9,7 +9,8 @@ import Foundation
 
 let count = Int(readLine() ?? "")
 var score = [Float]()
-for _ in 0..<(count ?? 0) {
+var result = [Float]()
+for i in 0..<(count ?? 0) {
     score = readLine()!.split(separator: " ").map { Float(String($0)) ?? 0.0 }
     let scoreFrom1 = score[1..<score.count]
     
@@ -21,7 +22,10 @@ for _ in 0..<(count ?? 0) {
             countThatOverAverage += 1
         }
     }
-    
-    let result = Float(countThatOverAverage) / score[0]
-    print(String(format: "%.3f", result*100) + "%")
+
+    result[i] = Float(countThatOverAverage) / score[0]
+}
+
+for i in result {
+    print(String(format: "%.3f", i * 100) + "%")
 }

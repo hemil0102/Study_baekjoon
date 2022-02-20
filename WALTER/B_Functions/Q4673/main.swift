@@ -7,24 +7,29 @@
 
 import Foundation
 
-func getSequence(_ n: Int) -> Int {
-    var res = n
-    if n >= 10 {
-        res += n / 10
-        n %= 10
+var selfNumber = Array(repeating: 0, count: 10001)
+for num in 1..<selfNumber.count{
+    let n = d(num)
+    
+    if n < 10001 {
+        selfNumber[n] = 1
+    }
+}
+
+for (idx, selfNum) in selfNumber.enumerated() {
+    if idx != 0 && selfNum != 1 {
+        print(idx)
+    }
+}
+
+func d(_ n: Int) -> Int {
+    var result = n
+    var nT = n
+    
+    while nT != 0 {
+        result += (nT % 10)
+        nT /= 10
     }
     
-    return res += n     //생성자
-}
-
-var selfNumber = Array(repeating: 0, count: 10001)
-for num in 1...10000 {
-    let n = getSequence(num)
-    selfNumber[n] = 1
-}
-
-for selfNum in selfNumber {
-    if !selfNum {
-        print(selfNum)
-    }
+    return result
 }

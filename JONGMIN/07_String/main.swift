@@ -111,7 +111,8 @@ for str in arr4 {
 
 //#5 another answer
 
-let word = readLine()!.uppercased()
+//let word = readLine()!.uppercased()
+let word = "baaa"
 var splitted2: [Character] = []
 
 word.forEach { character in
@@ -143,5 +144,37 @@ if filtered.count == 1 { //
     print("?")
 }
 
+//#6
+//let input6 = readLine()!.components(separatedBy: " ")
+let input6 = " the first char is a blank ".components(separatedBy: " ")
+
+//print(input6)
+
+var result = 0
+
+if (input6[0] != "" && input6[input6.endIndex - 1] != "") {
+    result = input6.count
+} else if (input6[0] == "" && input6[input6.endIndex - 1] == "") {
+    result = input6.count - 2
+} else {
+    result = input6.count - 1
+}
+print(result)
+
+//#7
+
+//let input7 = String(readLine()!.reversed()).components(separatedBy: " ").map { Int($0)! }
+let input7 = "123 456"
+print(input7.max()!)
+
+
+//#8
+
+/*
+ 1. 알파벳 각각이 속하는 곳의 숫자 발췌
+ 2. 발췌한 숫자를 전부 더하고,
+ 3. 전부 더한 값에 발췌한 숫자의 개수를 더더하나
+ 
+ */
 
 

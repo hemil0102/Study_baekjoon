@@ -7,8 +7,15 @@
 
 import Foundation
 
-for testCount in 0..<Int(readLine()!)! {
-    var inputStr = readLine()!.split(separator: " ")
+var result = ""
+for _ in 0..<Int(readLine()!)! {
+    let inputStr = readLine()!.split(separator: " ")
+    for word in inputStr[1] {
+        for _ in 0..<Int(inputStr[0])! {
+            result.append(word)
+        }
+    }
     
-    
+    print(result)
+    result = ""
 }

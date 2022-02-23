@@ -7,17 +7,21 @@
 
 import Foundation
 
-var alphabetCountArr = Array(repeating: -1, count: 26)
-var alphabetArr = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+var resultArr = Array(repeating: -1, count: 26)
+var alphabetArr:[Character] = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 if let alphabet = readLine() {
-    
-    for (idx, aValue) in alphabet.enumerated() {
-        var a = alphabet[1]
-        for alpha in alphabetArr {
-            if a == alphabet {
-                
+    for idx in 0...alphabet.count-1 {
+        let alpha1 = alphabet[idx]
+        
+        for (jdx, alpha2) in alphabetArr.enumerated() {
+            if alpha1 == alpha2 && (resultArr[jdx] == -1) {
+                resultArr[jdx] = idx
             }
         }
+    }
+    
+    for result in resultArr {
+        print(result, terminator: " ")
     }
 }
 

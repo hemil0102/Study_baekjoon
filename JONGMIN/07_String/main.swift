@@ -111,7 +111,8 @@ for str in arr4 {
 
 //#5 another answer
 
-let word = readLine()!.uppercased()
+//let word = readLine()!.uppercased()
+let word = "baaa"
 var splitted2: [Character] = []
 
 word.forEach { character in
@@ -143,5 +144,87 @@ if filtered.count == 1 { //
     print("?")
 }
 
+//#6
+//let input6 = readLine()!.components(separatedBy: " ")
+let input6 = " the first char is a blank ".components(separatedBy: " ")
 
+//print(input6)
+
+var result = 0
+
+if (input6[0] != "" && input6[input6.endIndex - 1] != "") {
+    result = input6.count
+} else if (input6[0] == "" && input6[input6.endIndex - 1] == "") {
+    result = input6.count - 2
+} else {
+    result = input6.count - 1
+}
+print(result)
+
+//#7
+
+//let input7 = String(readLine()!.reversed()).components(separatedBy: " ").map { Int($0)! }
+let input7 = "123 456"
+print(input7.max()!)
+
+
+//#8
+
+/*
+ 1. 알파벳 각각이 속하는 곳의 숫자 발췌
+ 2. 발췌한 숫자를 전부 더하고,
+ 3. 전부 더한 값에 발췌한 숫자의 개수를 더더하나
+ 
+ */
+
+//let input8 = readLine()!.lowercased()
+let input8 = "WA".lowercased()
+
+let alphabetToInt = [2: "abc", 3: "def", 4: "ghi", 5: "jkl", 6: "mno", 7: "pqrs", 8: "tuv", 9: "wxyz"]
+
+
+var count8 = input8.count
+
+for char in input8 {
+    for (key, value) in alphabetToInt{
+        if (value.contains(char)) {
+            count8 += key
+        }
+    }
+}
+
+print(count8)
+
+//#9
+
+//#10
+
+/*
+1.세트화로 찾을 알파뱃 축소(중복제거)
+2.세트의 요소 하나로 인풋의 배열에 첫번째 인덱스를 찾아서
+ 
+ */
+
+var count10 = 0
+
+for _ in 0..<Int(readLine()!)! {
+    let input = readLine()!
+    
+    var storeInput: [Character] = []
+    
+    for char in input {
+        if (!storeInput.contains(char)) {
+            storeInput.append(char)
+        } else if storeInput.last! != char { //포함되어 있으나, 마지막 글자와 다르면 검사 끝
+            storeInput.removeAll() //storeInput 전체 삭제 시키고 반복문 종료
+            break
+        }
+    }
+    
+    if ( storeInput.count != 0) {
+        count10 += 1
+    }
+}
+
+print(count10)
 

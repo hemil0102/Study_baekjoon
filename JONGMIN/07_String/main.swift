@@ -196,35 +196,53 @@ for char in input8 {
 print(count8)
 
 //#9
+//let input9 = readLine()!
+let input9 = "c=c-dz=d-ljnjs=z="
+var result9: String = input9
+
+let croatianChar: [String] = ["c=", "c-", "dz=", "d-", "lj", "nj", "s=", "z="]
+
+for str in croatianChar {
+    if (result9.contains("dz=")) { //dz= 가 들어갈 때 조건
+        result9 = input9.replacingOccurrences(of: "dz=", with: "@")
+        
+        if (result9.contains(str)) {
+            result9 = result9.replacingOccurrences(of: str, with: "@")
+        }
+    } else {
+        if (result9.contains(str)) {
+            result9 = result9.replacingOccurrences(of: str, with: "@")
+        }
+    }
+}
+
+//print(result9)
+
+print(result9.count)
+
+
 
 //#10
-
-/*
-1.세트화로 찾을 알파뱃 축소(중복제거)
-2.세트의 요소 하나로 인풋의 배열에 첫번째 인덱스를 찾아서
- 
- */
 
 var count10 = 0
 
 for _ in 0..<Int(readLine()!)! {
     let input = readLine()!
-    
+
     var storeInput: [Character] = []
-    
+
     for char in input {
         if (!storeInput.contains(char)) {
             storeInput.append(char)
-        } else if storeInput.last! != char { //포함되어 있으나, 마지막 글자와 다르면 검사 끝
+        } else if storeInput.last! != char { //포함되어 있고, 마지막 글자와 다르면 검사 끝
             storeInput.removeAll() //storeInput 전체 삭제 시키고 반복문 종료
             break
         }
     }
-    
+
     if ( storeInput.count != 0) {
         count10 += 1
     }
 }
 
 print(count10)
-
